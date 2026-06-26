@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🚀 ScriptAutomatizacion
+# 🚀 PythonBase
 
-**Una herramienta robusta para el análisis de código y procesamiento de PDFs.**
+**Una herramienta robusta para el análisis de código y procesamiento de PDFs utilizando diferentes herramientas propias y de OpenSource**
 
 [![Python Version](https://img.shields.io/badge/python-3.12%2B-blue?style=for-the-badge&logo=python&logoColor=white)](#)
 [![Semgrep](https://img.shields.io/badge/security-Semgrep-green?style=for-the-badge&logo=security&logoColor=white)](#)
@@ -13,7 +13,7 @@
 
 ## 📖 Sobre el Proyecto
 
-Este proyecto automatiza la ejecución de análisis estáticos utilizando Semgrep y procesa reportes PDF (como resultados de Grafana y Juice Shop). Está diseñado para ser rápido, modular y fácil de integrar en flujos de CI/CD.
+Este proyecto automatiza la ejecución de análisis estáticos utilizando Semgrep y procesa reportes PDF para cualquier clase de proyectos del lado de código. Está diseñado para ser rápido, modular y fácil de integrar en flujos de CI/CD.
 
 ## ✨ Características Principales
 
@@ -23,7 +23,7 @@ Este proyecto automatiza la ejecución de análisis estáticos utilizando Semgre
 
 ## 🛠️ Instalación
 
-Recomendacion de instalar con UV como gestor de paquetes para python
+Recomendación de instalar con UV como gestor de paquetes para python
 *  📦 [*UV*](https://docs.astral.sh/uv/) — gestor de paquetes ultrarrápido
 ```bash
 pip install uv
@@ -32,7 +32,7 @@ o sino
 ```bash
 pipx install uv
 ```
-Comandos basicos para arrancar con UV
+Comandos básicos para arrancar con UV
 
 ```bash
 uv init
@@ -60,7 +60,7 @@ A continuación, se detalla la arquitectura de carpetas y archivos principales d
 
 ```mermaid
 graph TD
-    A[📦 ScriptAutomatizacion] --> B(📂 InformesSemgrep)
+    A[📦 PythonBase] --> B(📂 InformesSemgrep)
     A --> E[📜 pyproject.toml]
     A --> F[📜 README.md]
     A --> G(📂 resumen)
@@ -83,4 +83,28 @@ graph TD
     style B fill:#0984e3,stroke:#74b9ff,stroke-width:2px,color:#fff
     style G fill:#0984e3,stroke:#74b9ff,stroke-width:2px,color:#fff
     style J fill:#0984e3,stroke:#74b9ff,stroke-width:2px,color:#fff
+```
+## 🕵️Ejemplo base
+**Se recomienda utilizar algun ejemplo estandarizado como los de la OWASP**
+
+Para esto se recomienda el proyecto de **Juice-Shop**
+*  🔍 [*Juice-shop*](https://github.com/juice-shop/juice-shop) — Proyecto para experimentar las vulnerabilidades de los sitios web [*Link DOC*](https://pwning.owasp-juice.shop/companion-guide/latest/introduction/README.html)
+
+Para ejecutar el script con el proyecto y ver los resultados
+puede ejecutar 
+```bash
+cd semgrep
+uv run analizarPdfParametro.py ruta-proyecto-juice-shop
+```
+Si se quiere logear con semgrep para ver la interface que ofrece
+*  🔍 [*Semgrep*](https://semgrep.dev/) — Para linkear es necesario hacer unos pasos previos [*Link DOC*](https://docs.semgrep.dev/)
+
+```bash
+semgrep login
+```
+
+Para proceder a usar la interface y entrar al navegador para ver esos resultados [Link](https://semgrep.dev/orgs/)
+```bash
+cd semgrep
+uv run analizarCIParametro.py ruta-proyecto-juice-shop
 ```
